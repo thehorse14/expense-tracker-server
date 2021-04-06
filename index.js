@@ -20,13 +20,19 @@ connection.once('open', () => {
   console.log("connect to db success")
 })
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
 
 app.get('/api/expenses', (req, res) => {
     res.send('Send a list of expenses')
 }) 
+
+app.post('/api/expense', (req, res) => {
+  console.log("Post expense to db")
+})
+
+//TODO get expense based on month
+//TODO get expense based on day
+//TODO get expense based on year
+//TODO user authentication
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
