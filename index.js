@@ -2,12 +2,17 @@ const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
+const passport = require("passport")
+
+const users = require("./routes/api/users")
+
 const app = express()
 const port = 3000
 
 dotenv.config();
 
 app.use(cors())
+app.use(express.urlencoded({ extended: true}))
 app.use(express.json())
 
 const uri = process.env.MONGODB_URI;
@@ -20,6 +25,12 @@ connection.once('open', () => {
   console.log("connect to db success")
 })
 
+
+app.use(passport.initialize())
+
+require("./config/passport")(passport)
+
+app.use("/api/users", users)
 
 app.get('/api/expenses', (req, res) => {
     res.send('Send a list of expenses')
