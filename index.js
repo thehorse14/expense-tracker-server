@@ -2,9 +2,9 @@ const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
-const passport = require("passport")
 
 const users = require("./routes/api/users")
+const expenses = require("./routes/api/expenses")
 
 const app = express()
 const port = 3000
@@ -26,20 +26,8 @@ connection.once('open', () => {
 })
 
 
-app.use(passport.initialize())
-
-require("./config/passport")(passport)
-
 app.use("/api/users", users)
-
-app.get('/api/expenses', (req, res) => {
-    res.send('Send a list of expenses')
-}) 
-
-app.post('/api/expense', (req, res) => {
-  console.log("Post expense to db")
-})
-
+app.use("/api/expenses", expenses)
 //TODO get expense based on month
 //TODO get expense based on day
 //TODO get expense based on year
