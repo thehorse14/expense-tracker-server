@@ -19,3 +19,18 @@ Content-Type: application/json
     "password": "123456789",
     "password2": "123456789"
 }
+
+### Add expense
+POST {{baseURL}}api/expenses/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNmRmNzJkOTUzZGRmMjY5MGY4NDliYyIsIm5hbWUiOiJzdXBlcm1hbiIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE2MTgzMzgyMTAsImV4cCI6MTY0OTg5NTEzNn0.q3nDWxk9nqwW3SWN2yaNcwcGZHZ3skwgic1z6Re9b7w
+
+{
+    "name": "power ranger 2",
+    "amount": 1999,
+    "remarks": "Testing"
+}
+
+### Get expenses
+GET {{baseURL}}api/expenses/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNmRmNzJkOTUzZGRmMjY5MGY4NDliYyIsIm5hbWUiOiJzdXBlcm1hbiIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE2MTgzMzgyMTAsImV4cCI6MTY0OTg5NTEzNn0.q3nDWxk9nqwW3SWN2yaNcwcGZHZ3skwgic1z6Re9b7w
