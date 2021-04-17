@@ -10,7 +10,6 @@ const auth = (req, res, next) => {
     } else {
         return res.status(401).json({ msg: 'Authorization denied' })
     }
-    console.log(token);
     // Check for token
     if (!token)
         return res.status(401).json({ msg: 'Authorization denied' })
