@@ -34,3 +34,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNmRmNzJkO
 ### Get expenses
 GET {{baseURL}}api/expenses/
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNmRmNzJkOTUzZGRmMjY5MGY4NDliYyIsIm5hbWUiOiJzdXBlcm1hbiIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE2MTgzMzgyMTAsImV4cCI6MTY0OTg5NTEzNn0.q3nDWxk9nqwW3SWN2yaNcwcGZHZ3skwgic1z6Re9b7w
+
+### Get expenses
+GET {{baseURL}}api/expenses/filter?startDate=2021-04-12T18:31:36.312Z&endDate=2021-05-01T18:31:36.312Z
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNmRmNzJkOTUzZGRmMjY5MGY4NDliYyIsIm5hbWUiOiJzdXBlcm1hbiIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE2MTgzMzgyMTAsImV4cCI6MTY0OTg5NTEzNn0.q3nDWxk9nqwW3SWN2yaNcwcGZHZ3skwgic1z6Re9b7w

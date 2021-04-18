@@ -34,4 +34,22 @@ router.get("/", auth, async (req, res) => {
     }
 })
 
+router.get("/filter", auth, async (req, res) => {
+    try {
+        const expenses = await Expense.find({ 
+            userId: req.user.id,
+            date: {
+                $gte: req.query.startDate,
+                $lt: req.query.endDate
+            }
+        });
+        if(!expenses)
+            throw Erorr("No expense")
+        
+        res.status(200).json(expenses)
+    } catch(e) {
+        res.status(400).json({ msg: e.message })
+    }
+})
+
 module.exports = router
