@@ -24,7 +24,7 @@ router.post("/", auth, async (req, res) => {
 
 router.get("/", auth, async (req, res) => {
     try {
-        const expenses = await Expense.find();
+        const expenses = await Expense.find({ userId: req.user.id });
         if(!expenses)
             throw Erorr("No expense")
         
